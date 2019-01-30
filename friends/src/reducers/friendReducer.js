@@ -33,8 +33,8 @@ export const friendReducer = (state = initialState, action) => {
         case FRIENDS_FETCHED:
             return {
                 ...state,
-                friends: action.payload,
                 isFetching: false,
+                friends: action.payload,
                 error: ''
             };
         case FRIENDS_SAVED:

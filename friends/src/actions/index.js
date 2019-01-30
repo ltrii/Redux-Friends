@@ -13,8 +13,18 @@ export const fetchingFriends = () => dispatch => {
     dispatch({ type: FETCHING_FRIENDS });
     Axios
         .get(
-            'http://localhost:5000/api/friends'
+            'http://localhost:5000/api/friends/'
         )
         .then(res => dispatch({ type: FRIENDS_FETCHED, payload: res.data }))
         .catch(err => console.log('error fetching'))
+}
+
+export const savingFriends = (friend) => dispatch => {
+    dispatch({ type: SAVING_FRIENDS });
+    Axios
+        .post(`http://localhost:5000/api/friends/`, friend)
+        .then(res => {
+            dispatch({ type: FRIENDS_SAVED, payload: res.data });
+        })
+        .catch(err => console.log(err));
 }
