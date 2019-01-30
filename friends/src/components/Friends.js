@@ -1,12 +1,14 @@
 import React from 'react';
 import Friend from './Friend';
 
-export default function Friends(props) {
+const Friends = props => {
   return (
     <div>
         {props.friends.map((friend, index) => (
-            <Friend />
+            <Friend friend={friend} key={index} />
         ))}
   </div>
   )
 }
+
+export default Friends;

@@ -22,7 +22,6 @@ const initialState = {
 }
 
 export const friendReducer = (state = initialState, action) => {
-    console.log('reducer', action);
     switch(action.type) {
         case FETCHING_FRIENDS:
             console.log('fetching_friends')
@@ -81,3 +80,4 @@ export const friendReducer = (state = initialState, action) => {
             return state;
         }
 }
+

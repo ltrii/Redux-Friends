@@ -27,11 +27,13 @@ class FriendsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    friends: state.friends,
-    isFetchingFriends: state.fetchingFriends,
-    error: state.error
+    friends: state.friendReducer.friends,
+    isFetchingFriends: state.friendReducer.fetchingFriends,
+    error: state.friendReducer.error
   };
 };
+
+
 
 export default connect(
   mapStateToProps,
