@@ -13,6 +13,7 @@ class FriendsList extends Component {
   render() {
     return (
       <div>
+        <h1>Friends</h1>
         <AddFriend {...this.props} />
         <Friends friends={this.props.friends} />
       </div>

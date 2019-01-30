@@ -2,3 +2,49 @@
   margin: auto;
   width: 80%;
 }
+
+.App .friendsHold {
+  padding: 5px;
+  margin: 5px 0px;
+  border: 1px solid black;
+}
+
+.App h1 {
+  line-height: 0;
+  font-size: 4.2em;
+}
+
+.App .friendsHold .friendDiv {
+  padding: 0px 5px;
+  margin: 10px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.App .friendsHold .friendDiv h3 {
+  line-height: 0;
+  font-size: 1.8em;
+}
+
+.App .friendsHold .friendDiv p {
+  color: rgb(34, 34, 34);
+}
+
+.App .addForm {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 20px 10px 20px;
+}
+
+.App .addForm input {
+  border: none;
+  background-color: rgb(245, 245, 245);
+  border-radius: 4px;
+  padding: 7px;
+  font-size: .9em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

@@ -34,10 +34,10 @@ export default class AddFriend extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
+      <form className="addForm" onSubmit={e => this.handleSubmit(e)}>
         <input required onChange={this.handleChange} type="text" placeholder="Friend name" name="curName" value={this.state.curName} />
         <input required onChange={this.handleChange} type="email" placeholder="Friend email" name="curEmail" value={this.state.curEmail} />
-        <input required onChange={this.handleChange} type="number" placeholder="Friend age" name="curAge" value={this.state.curAge} />
+        <input required onChange={this.handleChange} type="number" min="0" max="130" placeholder="Friend age" name="curAge" value={this.state.curAge} />
         <button>Submit</button>
       </form>
     )
