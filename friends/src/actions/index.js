@@ -9,12 +9,12 @@ export const FRIEND_UPDATED = 'FRIEND_UPDATED';
 export const DELETING_FRIEND = 'DELETING_FRIEND';
 export const FRIEND_DELETED = 'FRIEND_DELETED';
 
-export function fetchingFriends = () => dispatch => {
+export const fetchingFriends = () => dispatch => {
     dispatch({ type: FETCHING_FRIENDS });
     Axios
         .get(
             'http://localhost:5000/api/friends'
         )
         .then(res => dispatch({ type: FRIENDS_FETCHED, payload: res.data }))
-        .catch(err => dispatch({ type: }))
+        .catch(err => console.log('error fetching'))
 }

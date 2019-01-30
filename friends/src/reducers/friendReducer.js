@@ -23,6 +23,7 @@ const initialState = {
 
 export const friendReducer = (state = initialState, action) => {
     console.log('reducer', action);
+    switch(action.type) {
         case FETCHING_FRIENDS:
             console.log('fetching_friends')
             return {
@@ -39,22 +40,44 @@ export const friendReducer = (state = initialState, action) => {
             };
         case FRIENDS_SAVED:
             return {
-
+                ...state,
+                friends: action.payload,
+                isSaving: false,
+                error: ''
             };
         case SAVING_FRIENDS:
             return {
-
+                ...state,
+                isSaving: true,
+                error: ''
             };
         case UPDATING_FRIEND:
             return {
-
+                ...state,
+                isUpdating: true,
+                error: ''
             };
         case FRIEND_UPDATED:
             return {
-
+                ...state,
+                friends: action.payload,
+                isUpdating: false,
+                error: ''
             };
         case DELETING_FRIEND:
             return {
-
+                ...state,
+                isDeleting: true,
+                error: ''
             };
+        case FRIEND_DELETED:
+            return {
+                ...state,
+                friends: action.payload,
+                isDeleting: false,
+                error: ''
+            };
+        default:
+            return state;
+        }
 }
