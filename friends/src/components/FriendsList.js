@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Badge } from 'reactstrap';
 import { fetchingFriends, savingFriends, deletingFriend, updatingFriend } from '../actions';
 import Friends from './Friends';
 import AddFriend from './AddFriend';
@@ -19,7 +20,7 @@ class FriendsList extends Component {
   render() {
     return (
       <div>
-        <h1>Friends</h1>
+        <h1>Friends<Badge className="headBadge" pill href="https://redux.js.org/" color="secondary">Redux</Badge></h1>
         <AddFriend {...this.props} />
         <Friends friends={this.props.friends} deletingFriend={this.props.deletingFriend} updatingFriend={this.props.updatingFriend} />
       </div>

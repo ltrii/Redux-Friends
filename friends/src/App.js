@@ -7,6 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <FriendsList />
+        <footer>
+          made by ltrii
+        </footer>
       </div>
     );
   }
