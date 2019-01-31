@@ -17,6 +17,16 @@ export default class Friend extends Component {
     this.props.deletingFriend(this.props.friend.id)
   }
 
+  displayAddInfo = () => {
+    if(!this.props.friend.additional){
+      return 'No additional info'
+    } else {
+      return this.props.friend.additional
+    }
+  }
+
+
+
   render() {
     return (
       <Card className="friendHold">
@@ -30,7 +40,7 @@ export default class Friend extends Component {
           </CardText>
           <Collapse isOpen={this.state.collapse}>
             <div class="moreInfo">
-              info here
+              {this.displayAddInfo()}
             </div>
           </Collapse>
           <div class="friendButtons">

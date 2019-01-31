@@ -9,6 +9,7 @@ export default class EditFriend extends Component {
       curEmail: this.props.email,
       curAge: this.props.age,
       curID: this.props.id,
+      curInfo: this.props.additional,
       modal: false
     }
 
@@ -27,9 +28,10 @@ export default class EditFriend extends Component {
       id: this.state.curID,
       name: this.state.curName,
       email: this.state.curEmail,
-      age: this.state.curAge
+      age: this.state.curAge,
+      additional: this.state.curInfo
     }
-    this.props.updatingFriend(updatedFriend.name, updatedFriend.age, updatedFriend.email, updatedFriend.id);
+    this.props.updatingFriend(updatedFriend.name, updatedFriend.age, updatedFriend.email, updatedFriend.additional, updatedFriend.id);
     this.setState({
       modal: false
     })
@@ -53,6 +55,7 @@ export default class EditFriend extends Component {
             <Input required onChange={this.handleChange} type="text" placeholder="Friend name" name="curName" value={this.state.curName} />
             <Input required onChange={this.handleChange} type="email" placeholder="Friend email" name="curEmail" value={this.state.curEmail} />
             <Input required onChange={this.handleChange} type="number" min="0" max="130" placeholder="Friend age" name="curAge" value={this.state.curAge} />
+            <Input onChange={this.handleChange} type="textarea" placeholder="Additional info" name="curInfo" value={this.state.curInfo} />
           </FormGroup>
           <Button>Submit</Button>
         </Form>

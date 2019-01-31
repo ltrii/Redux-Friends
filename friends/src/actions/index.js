@@ -39,14 +39,15 @@ export const deletingFriend = (id) => dispatch => {
         .catch(err => console.log(err));
 }
 
-export const updatingFriend = (newName, newAge, newEmail, id) => dispatch => {
+export const updatingFriend = (newName, newAge, newEmail, newInfo, id) => dispatch => {
     dispatch({ type: UPDATING_FRIEND });
     Axios
         .put(`http://localhost:5000/api/friends/${id}`, {
             id: id,
             name: newName,
             email: newEmail,
-            age: newAge
+            age: newAge,
+            additional: newInfo
         })
         .then(res => {
             dispatch({ type: FRIEND_UPDATED, payload: res.data })
