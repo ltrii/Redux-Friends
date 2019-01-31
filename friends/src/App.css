@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.App .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .App h1 {
   display: flex;
   align-items: center;
@@ -32,6 +38,15 @@ Form {
 
 Form Input {
   margin: 5px 0px;
+}
+
+.noFriends {
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
 }
 
 .friendHold {
@@ -97,4 +112,12 @@ footer {
     margin-top: 7.5px;
   }
 
+}
+
+@keyframes expandCard {
+  from {
+    height: 10%
+  } to {
+    height: 100%
+  }
 }

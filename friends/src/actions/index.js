@@ -34,7 +34,7 @@ export const deletingFriend = (id) => dispatch => {
     Axios
         .delete(`http://localhost:5000/api/friends/${id}`)
         .then(res => {
-            dispatch({ type: FRIEND_DELETED, payload: res.data }, {params: {id: this.props.id}});
+            dispatch({ type: FRIEND_DELETED, payload: res.data }, {params: {id: id}});
         })
         .catch(err => console.log(err));
 }

@@ -51,6 +51,7 @@ export default class Friend extends Component {
                 name={this.props.friend.name}
                 email={this.props.friend.email}
                 age={this.props.friend.age} 
+                additional={this.props.friend.additional}
                 updatingFriend={this.props.updatingFriend} />
               <Button color="danger" onClick={this.handleDelete}>Delete</Button>
             </div>
