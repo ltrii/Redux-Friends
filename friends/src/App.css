@@ -1,0 +1,133 @@
+.App {
+  width: 80%;
+  margin: auto;
+}
+
+.App .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App h1 {
+  display: flex;
+  align-items: center;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: Rubik;
+  padding-bottom: 5px;
+  margin: 15px 0px 10px 0px;
+}
+
+.App h1 .headBadge {
+  font-size: .25em;
+  margin-left: 10px;
+}
+
+.addFriendDiv {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+Form {
+  padding: 10px;
+}
+
+Form Input {
+  margin: 5px 0px;
+}
+
+.noFriends {
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.friendHold {
+  margin-bottom: 12px;
+}
+
+.friendHold h3 {
+  font-size: 2.4em;
+  font-weight: bold;
+  font-family: Rubik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.friendButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friendButtonsEdDe {
+  display: flex;
+  align-items: center;
+}
+
+.friendButtonsEdDe Button {
+  margin: 0px 10px;
+}
+
+.moreInfo {
+  max-width: 33.3333333%;
+  padding: 7.5px;
+  margin-bottom: 7.5px;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: white;
+  min-height: 40px;
+}
+
+footer {
+  display: flex;
+  font-size: .75em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0px;
+  margin: auto;
+  width: 100%;
+}
+
+@media(max-width: 600px) {
+
+  .App h1 {
+    font-size: 4em;
+  }
+
+  .moreInfo {
+    max-width: 100%;
+  }
+
+  .addFriendDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .friendButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .friendButtonsEdDe {
+    margin-top: 7.5px;
+  }
+
+}
+
+@keyframes expandCard {
+  from {
+    height: 10%
+  } to {
+    height: 100%
+  }
+}
