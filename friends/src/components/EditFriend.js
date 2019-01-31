@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, FormGroup, Modal } from 'reactstrap';
 
-export default class AddFriend extends Component {
+export default class EditFriend extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      curName: '',
-      curEmail: '',
-      curAge: '',
+      curName: this.props.name,
+      curEmail: this.props.email,
+      curAge: this.props.age,
+      curID: this.props.id,
       modal: false
     }
 
@@ -22,16 +23,14 @@ export default class AddFriend extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let addFriendHold = {
+    let updatedFriend = {
+      id: this.state.curID,
       name: this.state.curName,
       email: this.state.curEmail,
-      age: this.state.curAge,
+      age: this.state.curAge
     }
-    this.props.savingFriends(addFriendHold);
+    this.props.updatingFriend(updatedFriend.name, updatedFriend.age, updatedFriend.email, updatedFriend.id);
     this.setState({
-      curName: '',
-      curEmail: '',
-      curAge: '',
       modal: false
     })
   }
@@ -46,8 +45,8 @@ export default class AddFriend extends Component {
 
   render() {
     return (
-      <div className="addFriendDiv">
-        <Button color="primary" onClick={this.toggle}>Add Friend</Button>
+      <div className="editFriendDiv">
+        <Button color="secondary" onClick={this.toggle}>Edit</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
         <Form onSubmit={e => this.handleSubmit(e)}>
           <FormGroup>

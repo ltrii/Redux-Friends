@@ -1,44 +1,46 @@
 .App {
-  margin: auto;
   width: 80%;
-}
-
-.App .friendsHold {
-  padding: 5px;
-  margin: 5px 0px;
-  border: 1px solid black;
+  margin: auto;
 }
 
 .App h1 {
-  line-height: 0;
-  font-size: 4.2em;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: Rubik;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.App .friendsHold .friendDiv {
-  padding: 0px 5px;
-  margin: 10px 0px;
-  border-bottom: 1px solid lightgrey;
-}
-
-.App .friendsHold .friendDiv h3 {
-  line-height: 0;
-  font-size: 1.8em;
-}
-
-.App .friendsHold .friendDiv p {
-  color: rgb(34, 34, 34);
-}
-
-.App .addForm {
+.addFriendDiv {
   display: flex;
-  justify-content: space-evenly;
-  padding: 0 20px 10px 20px;
+  justify-content: right;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-.App .addForm input {
-  border: none;
-  background-color: rgb(245, 245, 245);
-  border-radius: 4px;
-  padding: 7px;
-  font-size: .9em;
+Form {
+  padding: 10px;
+}
+
+Form Input {
+  margin: 5px 0px;
+}
+
+.friendHold {
+  margin-bottom: 12px;
+}
+
+.friendHold h3 {
+  font-size: 2.4em;
+  font-family: Rubik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.friendButtons {
+  display: flex;
+  justify-content: right;
+}
+
+.friendButtons Button {
+  margin: 0px 10px;
 }
