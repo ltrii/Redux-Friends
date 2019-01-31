@@ -77,7 +77,7 @@ Form Input {
 .moreInfo {
   max-width: 33.3333333%;
   padding: 7.5px;
-  margin: 10px 0px;
+  margin-bottom: 7.5px;
   border-radius: 5px;
   background-color: #17a2b8;
   color: white;
@@ -101,6 +101,9 @@ footer {
     font-size: 4em;
   }
 
+  .moreInfo {
+    max-width: 100%;
+  }
 
   .addFriendDiv {
     display: flex;
