@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchingFriends, savingFriends } from '../actions';
+import { fetchingFriends, savingFriends, deletingFriend } from '../actions';
 import Friends from './Friends';
 import AddFriend from './AddFriend';
 
@@ -10,12 +10,18 @@ class FriendsList extends Component {
     this.props.fetchingFriends();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.friends !== this.props.friends) {
+      this.props.fetchingFriends();
+    }
+  }
+
   render() {
     return (
       <div>
         <h1>Friends</h1>
         <AddFriend {...this.props} />
-        <Friends friends={this.props.friends} />
+        <Friends friends={this.props.friends} deletingFriend={this.props.deletingFriend} />
       </div>
     )
   }
@@ -34,5 +40,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchingFriends, savingFriends }
+  { fetchingFriends, savingFriends, deletingFriend }
 )(FriendsList);

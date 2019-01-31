@@ -28,3 +28,13 @@ export const savingFriends = (friend) => dispatch => {
         })
         .catch(err => console.log(err));
 }
+
+export const deletingFriend = (id) => dispatch => {
+    dispatch({ type: DELETING_FRIEND });
+    Axios
+        .delete(`http://localhost:5000/api/friends/${id}`)
+        .then(res => {
+            dispatch({ type: FRIEND_DELETED, payload: res.data }, {params: {id: this.props.id}});
+        })
+        .catch(err => console.log(err));
+}
